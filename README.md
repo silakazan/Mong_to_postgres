@@ -32,4 +32,19 @@ In this project, we simulate the process of extracting shipment data from MongoD
    python3 -m venv venv
    source venv/bin/activate  # For Mac/Linux
    venv\Scripts\activate     # For Windows
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+Running the Project
+Generate sample data: The generate_data.py script generates sample shipment data and inserts it into MongoDB.
+
+   ```bash
+   python generate_data.py
+Run the ETL Process: The etl_process.py script performs the ETL process: extracting data from MongoDB, transforming it, and loading it into PostgreSQL.
+
+   ```bash
+   python etl_process.py
+Check PostgreSQL Data: After running the ETL process, the data will be transferred to PostgreSQL. You can verify the data using a PostgreSQL client or by running the following command in the script:
+   ```bash
+   python check_data.py
 
