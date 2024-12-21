@@ -1,26 +1,29 @@
-+------------------+        +-----------------+        +------------------+
-|   shipments      |        |    parcels      |        |    addresses     |
-+------------------+        +-----------------+        +------------------+
-| shipment_id (PK) |◄──────►| parcel_id (PK)  |        | address_id (PK)  |
-| date             |        | shipment_id (FK)|◄──────►| shipment_id (FK) |
-+------------------+        | barcode         |        | street           |
-                           +-----------------+        | city             |
-                                                     | zip_code         |
-                                                     +------------------+
+# MongoDB to PostgreSQL ETL Project
 
-Kodda üç ana tablo bulunmaktadır:
+This project demonstrates how to perform an ETL (Extract, Transform, Load) process to transfer data from MongoDB to PostgreSQL using Python. The goal is to extract shipment data from MongoDB, transform it into a suitable format, and load it into a PostgreSQL database.
 
-shipments
-parcels
-addresses
-Ve bunlar arasında aşağıdaki ilişkiler vardır:
+## Project Overview
 
-İlişkiler:
-shipments tablosundaki her bir sevkiyat (shipment_id), parcels ve addresses tablolarındaki ilgili verilerle ilişkilidir.
-parcels tablosundaki her bir paket (parcel_id) bir shipment_id ile bağlanır, bu da shipments tablosundaki bir sevkiyata işaret eder.
-addresses tablosundaki her bir adres (address_id) de bir shipment_id ile bağlanır, bu da ilgili sevkiyatı işaret eder.
+In this project, we simulate the process of extracting shipment data from MongoDB, transforming it (e.g., ensuring it adheres to the format required by PostgreSQL), and loading it into PostgreSQL. The project highlights how to work with two popular databases and how to use Python libraries such as `pymongo` and `psycopg2` to interact with them.
 
-Açıklamalar:
-shipments tablosundaki shipment_id birincil anahtar (PK) olarak kullanılır ve parcels ve addresses tablolarındaki shipment_id alanları, sırasıyla bu tablolarda dış anahtar (FK) olarak kullanılır.
-parcels tablosundaki parcel_id birincil anahtar (PK) olup her paketi benzersiz bir şekilde tanımlar.
-addresses tablosundaki address_id birincil anahtar (PK) olup her adresi benzersiz bir şekilde tanımlanır.
+## Technologies Used
+- **MongoDB**: Source database where shipment data is stored.
+- **PostgreSQL**: Target database where the data will be transferred.
+- **Python**: Used for scripting and data manipulation.
+- **pymongo**: Python library for MongoDB integration.
+- **psycopg2**: Python library for PostgreSQL integration.
+
+## Setup and Installation
+
+### Prerequisites
+
+- **MongoDB**: Ensure MongoDB is installed and running.
+- **PostgreSQL**: Ensure PostgreSQL is installed and running.
+- **Python**: Python 3.x must be installed.
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/mongodb-to-postgresql-etl.git
+   cd mongodb-to-postgresql-etl
