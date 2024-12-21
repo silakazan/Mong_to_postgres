@@ -28,9 +28,8 @@ In this project, we simulate the process of extracting shipment data from MongoD
    git clone https://github.com/silakazan/mongodb-to-postgresql-etl.git
    cd mongodb-to-postgresql-etl
 2. Create a virtual environment:
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate  # For Mac/Linux
+   venv\Scripts\activate     # For Windows
 
-bash
-Kodu kopyala
-python3 -m venv venv
-source venv/bin/activate  # For Mac/Linux
-venv\Scripts\activate     # For Windows
